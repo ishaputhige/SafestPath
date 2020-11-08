@@ -92,7 +92,7 @@
 
     <div id="map" class="ui container"></div>
     <div class="ui container">
-        <h2>Choose the path with the least danger index for a safe travel!</h2>
+        <h2></h2>
     </div>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjD2L_ypqNjz5pt7LwrCXKn39GobK0EBs&libraries=places"></script>
@@ -1452,9 +1452,22 @@
                         // var obj = JSON.parse("../correct_data/first_centroid.json");
                         // console.log("QWERTYUIO");
                         // console.log(jsonObj);
-                        var centroids = JSON.parse()
-                            // console.log(jsonObj);
-                        var centroids = JSON.parse()
+                        // var centroids = JSON.parse()
+                        //     // console.log(jsonObj);
+                        // var centroids = JSON.parse()
+
+                        // console.log(danger_index);
+                        // console.log(second_cluster);
+
+                        for (var w = 0, len = second_cluster.length; w < len; w++) {
+
+                            console.log(second_cluster.danger_index[w]);
+                        }
+
+                        console.log(typeof(second_cluster));
+
+
+
                         new google.maps.DirectionsRenderer({
                             map: map,
                             directions: response,
@@ -1577,7 +1590,6 @@
             navigator.geolocation.getCurrentPosition(initMap);
         });
     </script>
-
+    <script src="logic.js"></script>
 </body>
-
-</html>
+< /html>
