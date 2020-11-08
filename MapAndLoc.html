@@ -262,13 +262,17 @@
         };
         color=["purple","yellow","green","blue","pink"];
             //me.directionsDisplay.setDirections(response);
-           console.log(response );
+            console.log("yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+           console.log(response.routes );
            var dindex=[];
              for (var k = 0, len = response.routes.length; k < len; k++) {
               dindex[k]=0;
               var points = response.routes[k].overview_path;
-              //console.log("yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-              //console.log(points.length);
+              // console.log("yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
+              // console.log(typeof(points[1].lng()) );
+              console.log(points[1].lng() );
+
+              
                new google.maps.DirectionsRenderer({
                     map: map,
                     directions: response,
