@@ -1454,12 +1454,14 @@
                     //me.directionsDisplay.setDirections(response);
                     //  console.log(response.routes);
                     var dindex = [];
+
+                    
                     for (var k = 0, len = response.routes.length; k < len; k++) {
                         dindex[k] = 0;
                         var points = response.routes[k].overview_path;
-
+                        // console.log(k,points);
                         // console.log(typeof(points[1].lng()) );
-                        console.log(points[1].lng());
+                        // console.log(points[1].lng());
                         var latitude = [];
                         var longitude = [];
 
@@ -1467,12 +1469,12 @@
                         var dind = 0;
                         var danger=[];
                         for (var q = 0, len = points.length; q < len; q++) {
-                            console.log(q);
-                            latitude_out = points[q].lat();
-                            longitude_out = points[q].lng();
+                            // console.log(q);
+                            var latitude_out = points[q].lat();
+                            var longitude_out = points[q].lng();
+                            // console.log(latitude_out,longitude_out);  
 
-
-                            console.log("FVGBHNJMKL,.;")
+                            // console.log("FVGBHNJMKL,.;")
                             var ind = 0;
                             var array_least_distance = [];
 
@@ -1480,7 +1482,7 @@
                                 var index = String(danger_index[w]);
                                 // console.log(index);
 
-                                in_arr = [];
+                                var in_arr = [];
                                 var ind2 = 0;
 
                                 for (var prop in second_cluster[index]) {
@@ -1500,7 +1502,7 @@
 
 
                             }
-                            console.log(array_least_distance);
+                            // console.log(array_least_distance);
                             var calc=0;
                             for (var a = 0, len = array_least_distance.length; a < len; a++) {
                                 var value = array_least_distance[a];
@@ -1532,7 +1534,10 @@
                         }
 
                         console.log(danger);
-
+                        // var a = [1,2,3];
+                        var sum = danger.reduce(function(a, b) { return a + b; }, 0);
+                        // console.log("Total Danger Index :-")
+                        // console.log(sum);
 
 
 
@@ -1621,7 +1626,7 @@
                             distance = "distance" + k,
                             safetyi = "safetyi" + k;
                         div.innerHTML = '<ul class="msg"><li id=' + colour + '></li><li id=' + duration + '></li><li id=' + distance + '></li><li id=' + safetyi + '></li></ul>';
-                        document.getElementById(colour).innerHTML = "Route Number:  " + k + " is colored " +
+                        document.getElementById(colour).innerHTML = "Route Number:  " + parseInt(k+1) + " is colored " +
                             (color[k]);
                         document.getElementById(distance).innerHTML = "Distance  : " +
                             (response.routes[k].legs[0].distance.text);
@@ -1631,7 +1636,11 @@
                             response.routes[k].legs[0].duration.text;
                         console.log(response.routes[k].legs[0]);
                         infoWindow.setPosition(posInit);
-                        var message = 'dangerIndex is :' + dindex[k];
+                        var di = sum/parseInt(response.routes[k].legs[0].distance.text);
+                        // console.log(sum);
+                        // console.log(parseInt(response.routes[k].legs[0].distance.text));
+                        console.log(di);
+                        var message = 'dangerIndex is :' + di;
                         document.getElementById(safetyi).innerHTML = message;
                         var dis = 'Route :' + k;
                         //infoWindow.setContent(dis);
