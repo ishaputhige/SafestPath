@@ -67,13 +67,71 @@
         li {
             font-family: georgia;
         }
+          h1.sixth { position: relative; 
+          text-align: center;
+          font-size: 60px;}
+
+          h1.sixth:before,
+          h1.sixth:after {
+            content: '[';
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            height: 100%;
+            font-size: 1.25em;
+            color: tomato;
+            
+            transition: all 0.5s ease;
+          }
+
+          h1.sixth:after { content: ']'; }
+
+          h1.sixth:hover:before { 
+            transform: translateX(-5px);
+          }
+
+          h1.sixth:hover:after { 
+            transform: translateX(5px);
+          }
+          h1.sixth_2 { position: relative; 
+          text-align: center;
+          font-size: 30px;}
+
+          h1.sixth_2:before,
+          h1.sixth_2:after {
+            content: '[';
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            height: 100%;
+            font-size: 1.25em;
+            color: tomato;
+            
+            transition: all 0.5s ease;
+          }
+
+          h1.sixth_2:after { content: ']'; }
+
+          h1.sixth_2:hover:before { 
+            transform: translateX(-5px);
+          }
+
+          h1.sixth_2:hover:after { 
+            transform: translateX(5px);
+          }
+
+          
+
+        
+
+
     </style>
 </head>
 
-<body>
-    <div class="ui main container segment">
-        <h1 style="font-size: 75px; font-family: georgia">Safest Route</h1>
-        <h2 style="text-align: right; font-family: georgia">We care</h2>
+<body style="background-image: url(https://camo.githubusercontent.com/a5be49ffbdea09c4eb4c8a5aadf69f53d1f6be437247315b656757435371b645/687474703a2f2f7368616c6c6d656e746d6f2e6769746875622e696f2f696d616765732f6c696e652d646f742d6261636b67726f756e642e676966);">
+    <div class="ui main container segment" style="background-image: url(https://static.bocoup.com/blog/improving-d3-path-animation/feature_image.gif) ">
+        <h1 class="sixth">Safest Route</h1>
+        <h1 class="sixth_2">Because We Care</h1>
     </div>
     <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
 
