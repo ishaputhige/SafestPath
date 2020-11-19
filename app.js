@@ -28,7 +28,7 @@ app.post("/login", function(req, res){
 	res.redirect("/maps");
 });
 app.get("/maps", function(req, res){
-	res.sendFile(path.join(__dirname + '/MapAndLoc.html'));
+	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.listen(3000, function(){
